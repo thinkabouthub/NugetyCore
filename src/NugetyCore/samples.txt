@@ -1,0 +1,19 @@
+﻿services.Replace(ServiceDescriptor.Transient<icontrolleractivator, servicebasedcontrolleractivator="">());
+
+            var builder = new ContainerBuilder();
+
+            var manager = new ApplicationPartManager();
+
+            manager.ApplicationParts.Add(new AssemblyPart(/* assembly with controllers, usually just Assembly.GetExecutingAssembly() */ ));
+
+            manager.FeatureProviders.Add(new ControllerFeatureProvider());
+
+            var feature = new ControllerFeature();
+
+            manager.PopulateFeature(feature);
+
+            builder.RegisterType<applicationpartmanager>().AsSelf().SingleInstance(); // not sure if actually needed any more
+
+            builder.RegisterTypes(feature.Controllers.Select(ti => ti.AsType()).ToArray()).PropertiesAutowired();
+
+            builder.Populate(services);
