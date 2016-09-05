@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using System.IO;
-using System.Reflection;
+﻿using System.Collections.Generic;
 
-namespace NugetyCore
+namespace Nugety
 {
     public static class IEnumerableExtensions
     {
@@ -16,7 +9,8 @@ namespace NugetyCore
             var instances = new List<T>();
             foreach (var module in modules)
             {
-                instances.Add(module.Catalog.Load<T>(module));
+                var i = module.Catalog.Load<T>(module);
+                if (i != null) instances.Add(i);
             }
             return instances;
         }

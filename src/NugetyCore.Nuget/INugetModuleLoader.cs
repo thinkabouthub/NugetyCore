@@ -1,6 +1,4 @@
-﻿using NugetyCore;
-
-namespace NugetyCore
+﻿namespace Nugety
 {
     public interface INugetModuleLoader : IModuleProvider
     {

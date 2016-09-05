@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace NugetyCore
+﻿namespace Nugety
 {
     public class NugetLoaderOptions
     {
-        public INugetModuleLoader Loader { get; private set; }
         public NugetLoaderOptions(INugetModuleLoader loader)
         {
-            this.Loader = loader;
+            Loader = loader;
         }
+
+        public INugetModuleLoader Loader { get; }
 
         public string Location { get; set; }
 
         public INugetModuleLoader SetLocation(string location)
         {
-            this.Location = location;
-            return this.Loader;
+            Location = location;
+            return Loader;
         }
     }
 }

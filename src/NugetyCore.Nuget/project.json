@@ -16,14 +16,14 @@
   },
   "buildOptions": {
     "xmlDoc": true,
-    "nowarn": [ "1591" ]
+    "nowarn": ["1591"]
   },
   "packOptions": {
-    "owners": [ "ThinkAbout" ],
+    "owners": ["ThinkAbout"],
     "summary": "NugetyCore.Nuget package summary",
     "releaseNotes": "Initial Release",
     "requireLicenseAcceptance": false,
-    "tags": [ "nugety", "c#", "dotnetcore" ]
+    "tags": ["nugety", "nugety.nuget", "nugetynuget", "c#", "dotnetcore"]
   },
   "scripts": {
     "postcompile": [

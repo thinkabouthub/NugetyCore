@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.Runtime.Loader;
 
-namespace NugetyCore
+namespace Nugety
 {
-
-    public interface INugetyCatalogProvider 
+    public interface INugetyCatalogProvider
     {
+        NugetyOptions Options { get; }
+        event EventHandler<ModuleIntanceEventArgs> ModuleLoaded;
+
+        event EventHandler<CancelModuleEventArgs> ModuleLoading;
+
         IEnumerable<ModuleInfo<T>> GetMany<T>(params Func<INugetyCatalogProvider, IEnumerable<ModuleInfo<T>>>[] loaders);
 
         T Load<T>(ModuleInfo module);
 
         IEnumerable<T> Load<T>(IEnumerable<ModuleInfo> modules);
-
-        NugetyOptions Options { get; }
 
         IDirectoryModuleProvider FromDirectory(string location = "Modules");
 

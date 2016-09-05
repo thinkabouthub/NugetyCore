@@ -1,10 +1,9 @@
-﻿
-
-namespace NugetyCore
+﻿namespace Nugety
 {
     public class NugetyOptions
     {
-        private NugetyCatalog _catalog;
+        private readonly NugetyCatalog _catalog;
+
         public NugetyOptions(NugetyCatalog catalog)
         {
             _catalog = catalog;
@@ -17,13 +16,13 @@ namespace NugetyCore
 
         public virtual NugetyCatalog SetFileNameFilterPattern(string pattern)
         {
-            this.FileNameFilterPattern = pattern;
+            FileNameFilterPattern = pattern;
             return _catalog;
         }
 
         public virtual NugetyCatalog SetModuleNameFilterPattern(string pattern)
         {
-            this.ModuleNameFilterPattern = pattern;
+            ModuleNameFilterPattern = pattern;
             return _catalog;
         }
     }

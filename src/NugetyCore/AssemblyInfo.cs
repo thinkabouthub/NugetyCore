@@ -1,14 +1,14 @@
 ﻿using System.Reflection;
 using System.Runtime.Loader;
 
-namespace NugetyCore
+namespace Nugety
 {
     public class AssemblyInfo
     {
         public AssemblyInfo(Assembly assembly)
         {
-            this.Assembly = assembly;
-            this.Location = this.Assembly.Location;
+            Assembly = assembly;
+            Location = Assembly.Location;
         }
 
         public Assembly Assembly { get; set; }
@@ -16,10 +16,7 @@ namespace NugetyCore
 
         public AssemblyLoadContext Context
         {
-            get
-            {
-                return AssemblyLoadContext.GetLoadContext(this.Assembly);
-            }
+            get { return AssemblyLoadContext.GetLoadContext(Assembly); }
         }
     }
 }

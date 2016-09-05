@@ -14,11 +14,11 @@
     }
   },
   "packOptions": {
-    "owners": [ "ThinkAbout" ],
+    "owners": ["ThinkAbout"],
     "summary": "NugetyCore package summary",
     "releaseNotes": "Initial Release",
     "requireLicenseAcceptance": false,
-    "tags": ["nugety", "c#", "dotnetcore"]
+    "tags": ["nugety", "nugetcore", "c#", "dotnetcore"]
   },
 
   "scripts": {

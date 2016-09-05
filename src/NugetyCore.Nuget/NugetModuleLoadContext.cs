@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
-using Microsoft.Extensions.DependencyModel;
-using System.IO;
 
-namespace NugetyCore
+namespace Nugety
 {
     public class NugetModuleLoadContext : AssemblyLoadContext
     {
-        public INugetModuleLoader Loader { get; private set; }
+        public NugetModuleLoadContext(INugetModuleLoader loader, DirectoryInfo directory)
+        {
+            Loader = loader;
+            Directory = directory;
+        }
 
-        public INugetyCatalogProvider Catalog { get { return this.Loader.Catalog; } }
+        public INugetModuleLoader Loader { get; }
+
+        public INugetyCatalogProvider Catalog
+        {
+            get { return Loader.Catalog; }
+        }
 
         public DirectoryInfo Directory { get; private set; }
 
         public ModuleInfo ModuleInfo { get; private set; }
-
-        public NugetModuleLoadContext(INugetModuleLoader loader, DirectoryInfo directory)
-        {
-            this.Loader = loader;
-            this.Directory = directory;
-        }
 
         protected override Assembly Load(AssemblyName assemblyName)
         {
