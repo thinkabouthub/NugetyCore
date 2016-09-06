@@ -18,7 +18,7 @@
     "summary": "NugetyCore package summary",
     "releaseNotes": "Initial Release",
     "requireLicenseAcceptance": false,
-    "licenseUrl": "https://github.com/thinkabouthub/NugetyCore/blob/master/nugety_icon.png",
+    "licenseUrl": "https://raw.githubusercontent.com/thinkabouthub/NugetyCore/master/nugety_icon.png",
     "tags": [ "nugety", "nugetcore", "c#", "dotnetcore" ]
   },
 
