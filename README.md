@@ -61,7 +61,7 @@ var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>().Load();
 ```
 
-[Set Modules to be resolved](https://github.com/thinkabouthub/Nugety/wiki/FromDirectory/). The default behaviour is that all modules found in root Nugety Modules Directory are resolved.
+[Set Modules to be resolved](https://github.com/thinkabouthub/Nugety/wiki/FromDirectory/). The default behaviour is for all modules found in the root Nugety Modules Directory to resolve.
 
 ```C#
 var modules = new NugetyCatalog()
