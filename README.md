@@ -18,7 +18,7 @@ Our [Getting Started](https://github.com/thinkabouthub/Nugety/wiki/getting-start
 
 You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety-core).
 
-[Release notes are available on the wiki](https://github.com/thinkabouthub/nugety/wiki).
+[Release notes are available on the wiki](https://github.com/thinkabouthub/nugety/release-notes).
 
 ## Get Help
 
