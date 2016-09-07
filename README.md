@@ -16,7 +16,7 @@ Our [Getting Started](https://github.com/thinkabouthub/Nugety/wiki/getting-start
 
 ## Get Packages
 
-You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org/feed/Packages/nugety). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety).
+You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety-core).
 
 [Release notes are available on the wiki](https://github.com/thinkabouthub/nugety/wiki).
 
@@ -73,7 +73,7 @@ var modules = new NugetyCatalog()
 
 **There is a growing number of [application integration libraries] that make using Nugety with your application a snap.**
 
-- [NugetyCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore) - Core Nugety API (this repo).
-- [NugetyCore.AspNetCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.AspNetCore) - ASP.NET integration for Nugety (this repo).
-- [Nugety.Autofac](https://github.com/thinkabouthub/nugety) - Support for Nugety as Autofac modules (this repo).
-- [NugetyCore.Nuget](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.Nuget) - Support for Nuget as Nugety source (this repo).
+- [NugetyCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore) - Core Nugety API [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [NugetyCore.AspNetCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.AspNetCore) - ASP.NET integration for Nugety [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [Nugety.Autofac](https://github.com/thinkabouthub/nugety) - Support for Nugety as Autofac modules [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [NugetyCore.Nuget](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.Nuget) - Support for Nuget as Nugety source [this repo](https://github.com/thinkabouthub/NugetyCore).
