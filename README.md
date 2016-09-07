@@ -1,4 +1,4 @@
-# NugetyCore
+# NugetyCore for .NET Core
 
 Nugety for Microsoft .NET provides support for the **Modular Composition** of both Web and Native applications. It employs a Provider Model for the discovery of modules which are then loaded into the Assembly Load Context. Nugety is best suited to ASP.NET Core or any application which employs an IoC container such as [Autofac](https://autofac.org), [Castle](http://www.castleproject.org/container/index.html), [Spring.Net](http://www.springframework.net/) or [Unity](http://unity.codeplex.com/). An IoC container will allow the modules to interact while still maintaining the all important **Seperation of Concerns**.
  
