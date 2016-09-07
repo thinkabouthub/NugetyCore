@@ -7,9 +7,11 @@ Nugety for Microsoft .NET provides support for the **Modular Composition** of bo
 
 # So why use Nugety?
 
-This question is best answered by the likes of **Martin Fowler** in his blog post [Sacrifical Architecture](http://martinfowler.com/bliki/SacrificialArchitecture.html). The most effective way of adhering to the principal of Sacrifical Architecture is through Modular Archtecture. Modular architecture encourages the logical and physical Seperation of Concerns allowing functionality to be easily upgraded or replaced.
+This question is best answered by the likes of **Martin Fowler** in his blog post [Sacrificial Architecture](http://martinfowler.com/bliki/SacrificialArchitecture.html). The most effective way of adhering to the principal of Sacrificial Architecture is through Modular Architecture. Modular architecture encourages the logical and physical Separation of Concerns allowing functionality to be easily upgraded or replaced without having to recompile and deploy.
 
-In comparison to monolithic compositition of components and assemblies which is arguably an anti-pattern, Modular design is now actively encouraged by Microsoft and is a fundamental principal of ASP.NET Core. 
+In comparison to monolithic composition of components and assemblies which is arguably an anti-pattern, Modular design is now actively encouraged by Microsoft and is a fundamental principal of ASP.NET Core. 
+
+Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. It will also manage the loading of dependent assemblies using the same **Assembly Load Context**.
 
 [More details](https://github.com/thinkabouthub/Nugety/wiki/Use-Cases) are available on the wiki.
 
