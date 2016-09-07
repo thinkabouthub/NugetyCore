@@ -11,9 +11,12 @@ This question is best answered by the likes of **Martin Fowler** in his blog pos
 
 In comparison to monolithic compositition of components and assemblies which is arguably an anti-pattern, Modular design is now actively encouraged by Microsoft and is a fundamental principal of ASP.NET Core. 
 
+# How do I get started?
+Our [Getting Started](https://github.com/thinkabouthub/Nugety/wiki/getting-started/) tutorial walks you through integrating Nugety with a simple ASP.NET Core app and gives you some starting points for learning more.
+
 ## Get Packages
 
-You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org/feed/Packages/nugety-core). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety-core).
+You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org/feed/Packages/nugety). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety).
 
 [Release notes are available on the wiki](https://github.com/thinkabouthub/nugety/wiki).
 
@@ -21,11 +24,7 @@ You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org
 
 **Need help with Nugety?** We're ready to answer your questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/nugety). Our [blog page](https://thinkabout.ghost.io/) is also a useful source of information and updates.
 
-## Get Started
-
-Our [Getting Started](https://github.com/thinkabouthub/Nugety/wiki/getting-started/) tutorial walks you through integrating Nugety with a simple ASP.NET Core app and gives you some starting points for learning more.
-
-Super-duper quick start:
+##Super-duper quick start
 
 [Create a Module Assembly](https://github.com/thinkabouthub/Nugety/wiki/create-module/), [get Module using `NugetyCatalog`](https://github.com/thinkabouthub/Nugety/wiki/get-module/) and then [load Module Initialiser](https://github.com/thinkabouthub/Nugety/wiki/load-module/).
 
