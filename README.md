@@ -30,7 +30,7 @@ You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org
 
 ##Super-duper quick start
 
-[Create a Module Assembly](https://github.com/thinkabouthub/Nugety/wiki/create-module/), [get Module using `NugetyCatalog`](https://github.com/thinkabouthub/Nugety/wiki/get-module/) and then [load Module Initialiser](https://github.com/thinkabouthub/Nugety/wiki/load-module/).
+[Create a Module Assembly](https://github.com/thinkabouthub/Nugety/wiki/create-module/), [get Module](https://github.com/thinkabouthub/Nugety/wiki/get-module/) using `NugetyCatalog` and then [load Module Initialiser](https://github.com/thinkabouthub/Nugety/wiki/load-module/).
 
 ```C#
 var modules = new NugetyCatalog()
