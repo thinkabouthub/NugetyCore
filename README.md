@@ -1,6 +1,6 @@
 # NugetyCore for .NET Core
 
-Nugety for Microsoft .NET provides support for the **Modular Composition** of both Web and Native applications. It employs a Provider Model for the discovery of modules which are then loaded into the Assembly Load Context. Nugety is best suited to ASP.NET Core or any application which employs an IoC container such as [Autofac](https://autofac.org), [Castle](http://www.castleproject.org/container/index.html), [Spring.Net](http://www.springframework.net/) or [Unity](http://unity.codeplex.com/). An IoC container will allow the modules to interact while still maintaining the all important **Seperation of Concerns**.
+Nugety for Microsoft .NET provides support for the **Modular Composition** of both Web and Native applications. It employs a Provider Model for the discovery of modules which are then loaded into the [Assembly Load Context](https://github.com/thinkabouthub/Nugety/wiki/Assembly-Load-Context). Nugety is best suited to ASP.NET Core or any application which employs an IoC container such as [Autofac](https://autofac.org), [Castle](http://www.castleproject.org/container/index.html), [Spring.Net](http://www.springframework.net/) or [Unity](http://unity.codeplex.com/). An IoC container will allow the modules to interact while still maintaining the all important **Seperation of Concerns**.
  
 ## Build Status
 ![MyGet publish status](https://www.myget.org/BuildSource/Badge/nugety-core?identifier=efb2ee2e-aa1b-4b0d-9c06-fdb563344c6a)
@@ -11,7 +11,7 @@ This question is best answered by the likes of **Martin Fowler** in his blog pos
 
 In comparison to monolithic composition of components and assemblies which is arguably an anti-pattern, Modular design is now actively encouraged by Microsoft and is a fundamental principal of ASP.NET Core. 
 
-Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. [NugetyCore](https://github.com/thinkabouthub/NugetyCore) will also load each [Module Initializer](https://github.com/thinkabouthub/Nugety/wiki/Module-Initializer) assembly and any dependencies via a module specific [Assembly Load Context](https://github.com/thinkabouthub/Nugety/wiki/Module-Initializer). This will help in the Separation of Concerns and in minimising any leakage between modules.
+Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. [NugetyCore](https://github.com/thinkabouthub/NugetyCore) will also load each [Module Initializer](https://github.com/thinkabouthub/Nugety/wiki/Module-Initializer) assembly and any dependencies via a module specific [Assembly Load Context](https://github.com/thinkabouthub/Nugety/wiki/Assembly-Load-Context). This will help in the Separation of Concerns and in minimising any leakage between modules.
 
 [More details](https://github.com/thinkabouthub/Nugety/wiki/Use-Cases) are available on the wiki.
 
