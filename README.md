@@ -11,7 +11,7 @@ This question is best answered by the likes of **Martin Fowler** in his blog pos
 
 In comparison to monolithic composition of components and assemblies which is arguably an anti-pattern, Modular design is now actively encouraged by Microsoft and is a fundamental principal of ASP.NET Core. 
 
-Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. [NugetyCore](https://github.com/thinkabouthub/NugetyCore) will also load each [Module Initializer](https://github.com/thinkabouthub/Nugety/wiki/Module-Initializer) assembly and any dependencies via a module specific **Assembly Load Context**. This will help in the Separation of Concerns and in minimising the leakage between modules.
+Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. [NugetyCore](https://github.com/thinkabouthub/NugetyCore) will also load each [Module Initializer](https://github.com/thinkabouthub/Nugety/wiki/Module-Initializer) assembly and any dependencies via a module specific **Assembly Load Context**. This will help in the Separation of Concerns and in minimising any leakage between modules.
 
 [More details](https://github.com/thinkabouthub/Nugety/wiki/Use-Cases) are available on the wiki.
 
