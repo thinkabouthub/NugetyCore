@@ -1,6 +1,6 @@
 # NugetyCore for .NET Core
 
-Nugety for Microsoft .NET provides support for the **Modular Composition** of both Web and Native applications. It employs a Provider Model for the discovery of modules which are then loaded into the [Assembly Load Context](https://github.com/thinkabouthub/Nugety/wiki/Assembly-Load-Context). Nugety is best suited to ASP.NET Core or any application which employs an IoC container such as [Autofac](https://autofac.org), [Castle](http://www.castleproject.org/container/index.html), [Spring.Net](http://www.springframework.net/) or [Unity](http://unity.codeplex.com/). An IoC container will allow the modules to interact while still maintaining the all important **Seperation of Concerns**.
+Nugety for Microsoft .NET provides support for the **Modular Composition** of both Web and Native applications. It employs a Provider Model for the discovery of modules which are then loaded into the [Assembly Load Context](https://github.com/thinkabouthub/NugetyCore/wiki/Assembly-Load-Context). Nugety is best suited to ASP.NET Core or any application which employs an IoC container such as [Autofac](https://autofac.org), [Castle](http://www.castleproject.org/container/index.html), [Spring.Net](http://www.springframework.net/) or [Unity](http://unity.codeplex.com/). An IoC container will allow the modules to interact while still maintaining the all important **Seperation of Concerns**.
  
 ## Build Status
 ![MyGet publish status](https://www.myget.org/BuildSource/Badge/nugety-core?identifier=efb2ee2e-aa1b-4b0d-9c06-fdb563344c6a)
@@ -11,12 +11,12 @@ This question is best answered by the likes of **Martin Fowler** in his blog pos
 
 In comparison to monolithic composition of components and assemblies which is arguably an anti-pattern, Modular design is now actively encouraged by Microsoft and is a fundamental principal of ASP.NET Core. 
 
-Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. [NugetyCore](https://github.com/thinkabouthub/NugetyCore) will also load each [Module Initializer](https://github.com/thinkabouthub/Nugety/wiki/Module-Initializer) assembly and any dependencies via a module specific [Assembly Load Context](https://github.com/thinkabouthub/Nugety/wiki/Assembly-Load-Context). This will help in the Separation of Concerns and in minimising any leakage between modules.
+Nugety allows all related aspects of a feature, including Services, Components and Static Files to be registered with the host application. [NugetyCore](https://github.com/thinkabouthub/NugetyCore) will also load each [Module Initializer](https://github.com/thinkabouthub/NugetyCore/wiki/Module-Initializer) assembly and their dependencies via a module specific [Assembly Load Context](https://github.com/thinkabouthub/NugetyCore/wiki/Assembly-Load-Context). This will help in the Separation of Concerns and in minimising any leakage between modules.
 
-[More details](https://github.com/thinkabouthub/Nugety/wiki/Use-Cases) are available on the wiki.
+[More details](https://github.com/thinkabouthub/NugetyCore/wiki/Use-Cases) are available on the wiki.
 
 # How do I get started?
-Our [Getting Started](https://github.com/thinkabouthub/Nugety/wiki/getting-started/) tutorial walks you through integrating Nugety with a simple ASP.NET Core app and gives you some starting points for learning more.
+Our [Getting Started](https://github.com/thinkabouthub/NugetyCore/wiki/getting-started/) tutorial walks you through integrating Nugety with a simple ASP.NET Core app and gives you some starting points for learning more.
 
 ## Get Packages
 
@@ -30,7 +30,7 @@ You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org
 
 ##Super-duper quick start
 
-[Create a Module assembly](https://github.com/thinkabouthub/Nugety/wiki/create-module/), [get Module](https://github.com/thinkabouthub/Nugety/wiki/get-module/) using `NugetyCatalog` and then [load Module Initialiser](https://github.com/thinkabouthub/Nugety/wiki/load-module/).
+[Create a Module assembly](https://github.com/thinkabouthub/NugetyCore/wiki/create-module/), [get Module](https://github.com/thinkabouthub/NugetyCore/wiki/get-module/) using `NugetyCatalog` and then [load Module Initialiser](https://github.com/thinkabouthub/NugetyCore/wiki/load-module/).
 
 ```C#
 var modules = new NugetyCatalog()
@@ -38,7 +38,7 @@ var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>().Load();
 ```
 
-[Set File Name Filter Pattern for Module Initialiser Assembly](https://github.com/thinkabouthub/Nugety/wiki/SetFileNameFilterPattern/):
+[Set File Name Filter Pattern for Module Initialiser Assembly](https://github.com/thinkabouthub/NugetyCore/wiki/SetFileNameFilterPattern/):
 
 ```C#
 var modules = new NugetyCatalog()
@@ -47,7 +47,7 @@ var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>().Load();
 ```
 
-[Set Module Name Filter Pattern for Modules to load](https://github.com/thinkabouthub/Nugety/wiki/SetModuleNameFilterPattern/):
+[Set Module Name Filter Pattern for Modules to load](https://github.com/thinkabouthub/NugetyCore/wiki/SetModuleNameFilterPattern/):
 
 ```C#
 var modules = new NugetyCatalog()
@@ -56,7 +56,7 @@ var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>().Load();
 ```
 
-[Set root Modules Directory](https://github.com/thinkabouthub/Nugety/wiki/FromDirectory/). The default root directory is "Modules".
+[Set root Modules Directory](https://github.com/thinkabouthub/NugetyCore/wiki/Load-From-Directory/). The default root directory is "Nugety".
 
 ```C#
 var modules = new NugetyCatalog()
@@ -64,14 +64,14 @@ var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>().Load();
 ```
 
-[Set Modules to be resolved](https://github.com/thinkabouthub/Nugety/wiki/FromDirectory/). The default behaviour is for all modules found in the root Nugety Modules Directory to resolve.
+[Set Modules to be resolved](https://github.com/thinkabouthub/NugetyCore/wiki/get-module/). The default behaviour is for all modules found in the root Nugety Modules Directory to resolve.
 
 ```C#
 var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>("swagger", "autho").Load();
 ```
 
-**[Intrigued? Check out our Getting Started walkthrough!](https://github.com/thinkabouthub/Nugety/wiki/getting-started/)**
+**[Intrigued? Check out our Getting Started walkthrough!](https://github.com/thinkabouthub/NugetyCore/wiki/getting-started/)**
 
 ## Project
 
