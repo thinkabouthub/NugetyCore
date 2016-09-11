@@ -16,9 +16,10 @@ namespace Nugety
         public object Value { get; set; }
     }
 
-    public class CancelModuleEventArgs : CancelEventArgs
+    public class ModuleCancelEventArgs : CancelEventArgs
     {
-        public CancelModuleEventArgs(ModuleInfo module)
+    
+        public ModuleCancelEventArgs(ModuleInfo module)
         {
             Module = module;
         }
