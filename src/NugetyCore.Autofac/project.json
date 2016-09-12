@@ -1,10 +1,10 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "Autofac": "4.0.0",
-    "NugetyCore": "1.0.0-*",
+    "NugetyCore": "1.0.1-*"
   },
 
   "frameworks": {
@@ -21,6 +21,7 @@
     "summary": "NugetyCore.Autofac package summary",
     "releaseNotes": "Initial Release",
     "requireLicenseAcceptance": false,
+    "iconUrl": "https://raw.githubusercontent.com/thinkabouthub/NugetyCore/master/nugety_icon.png",
     "tags": [ "nugety", "nugety.autofac", "nugetyautofac", "c#", "dotnetcore" ]
   },
   "scripts": {

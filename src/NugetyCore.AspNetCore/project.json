@@ -17,11 +17,12 @@
     "nowarn": ["1591"]
   },
   "packOptions": {
-    "owners": ["ThinkAbout"],
+    "owners": [ "ThinkAbout" ],
     "summary": "NugetyCore.AspNetCore package summary",
     "releaseNotes": "Initial Release",
     "requireLicenseAcceptance": false,
-    "tags": ["nugety", "nugetcore.aspnetcore", "nugetyaspnetcore", "c#", "dotnetcore"]
+    "iconUrl": "https://raw.githubusercontent.com/thinkabouthub/NugetyCore/master/nugety_icon.png",
+    "tags": [ "nugety", "nugetcore.aspnetcore", "nugetyaspnetcore", "c#", "dotnetcore" ]
   },
   "scripts": {
     "postcompile": [
