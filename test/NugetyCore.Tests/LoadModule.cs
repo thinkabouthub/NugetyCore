@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Nugety;
-using NugetyCore;
 using Xunit;
 
 namespace NugetyCore.Tests

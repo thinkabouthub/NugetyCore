@@ -54,8 +54,7 @@ namespace Nugety
 
         public virtual Type GetModuleInitializer(Assembly assembly, Type initialiser)
         {
-            var type =
-                assembly.GetTypes().FirstOrDefault(t => !t.GetTypeInfo().IsInterface && initialiser.IsAssignableFrom(t));
+            var type = assembly.GetTypes().FirstOrDefault(t => !t.GetTypeInfo().IsInterface && initialiser.IsAssignableFrom(t));
             if (type != null)
                 return type;
             type = assembly.ExportedTypes.FirstOrDefault(t => t == initialiser);

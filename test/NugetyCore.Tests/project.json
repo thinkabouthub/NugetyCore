@@ -5,7 +5,6 @@
     "xunit": "2.2.0-beta2-build3300",
     "NugetyCore.Tests.Common": "1.0.0-*",
     "NugetyCore.Nuget": "1.0.1",
-    "NugetyCore.Autofac": "1.0.1",
     "NugetyCore.AspNetCore": "1.0.1",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
   },
