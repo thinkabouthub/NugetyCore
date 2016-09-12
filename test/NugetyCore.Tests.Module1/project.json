@@ -4,7 +4,7 @@
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "Autofac": "4.0.0",
-    "NugetyCore.AspNetCore": "1.0.0-*"
+    "NugetyCore.AspNetCore": "1.0.1"
   },
 
   "frameworks": {
