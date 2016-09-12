@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace NugetyCore
+namespace Nugety
 {
     public class NugetModuleLoadContext : AssemblyLoadContext
     {

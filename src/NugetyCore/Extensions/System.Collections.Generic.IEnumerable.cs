@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NugetyCore
+namespace Nugety
 {
     public static class IEnumerableExtensions
     {

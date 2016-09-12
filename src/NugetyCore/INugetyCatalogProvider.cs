@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace NugetyCore
+namespace Nugety
 {
     public interface INugetyCatalogProvider
     {

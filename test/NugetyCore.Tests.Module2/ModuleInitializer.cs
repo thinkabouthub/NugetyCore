@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Nugety.Tests.Common;
 using NugetyCore;
-using NugetyCore.Tests.Common;
 
-namespace NugetyCore.Tests.Module2
+namespace Nugety.Tests.Module2
 {
     public class ModuleInitializer : Module, IModuleInitializer, IDependency1Version
     {

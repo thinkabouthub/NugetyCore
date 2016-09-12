@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace NugetyCore
+namespace Nugety
 {
     public static class IServiceCollectionExtensions
     {

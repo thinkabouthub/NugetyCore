@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace NugetyCore
+namespace Nugety
 {
     public class ModuleIntanceEventArgs : EventArgs
     {
