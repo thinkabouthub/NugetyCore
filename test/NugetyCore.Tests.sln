@@ -17,14 +17,6 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NugetyCore.Tests.Module2", 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NugetyCore.Tests.Module3", "NugetyCore.Tests.Module3\NugetyCore.Tests.Module3.xproj", "{6A8D59DA-5B59-471D-88F6-3022389530C0}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NugetyCore", "..\src\NugetyCore\NugetyCore.xproj", "{4CB066AA-7A5D-4A72-BDCB-29D3A5E0FDFF}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NugetyCore.AspNetCore", "..\src\NugetyCore.AspNetCore\NugetyCore.AspNetCore.xproj", "{15AF23D4-17D2-44FC-BD5A-5BF86F0ACB50}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NugetyCore.Nuget", "..\src\NugetyCore.Nuget\NugetyCore.Nuget.xproj", "{C26E091B-1397-406E-9758-4BD4CAB0C2A3}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NugetyCore.Autofac", "..\src\NugetyCore.Autofac\NugetyCore.Autofac.xproj", "{040AB6B2-9A4E-4088-9129-4EAB8DD73EBD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,22 +51,6 @@ Global
 		{6A8D59DA-5B59-471D-88F6-3022389530C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A8D59DA-5B59-471D-88F6-3022389530C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A8D59DA-5B59-471D-88F6-3022389530C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CB066AA-7A5D-4A72-BDCB-29D3A5E0FDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CB066AA-7A5D-4A72-BDCB-29D3A5E0FDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CB066AA-7A5D-4A72-BDCB-29D3A5E0FDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CB066AA-7A5D-4A72-BDCB-29D3A5E0FDFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15AF23D4-17D2-44FC-BD5A-5BF86F0ACB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15AF23D4-17D2-44FC-BD5A-5BF86F0ACB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15AF23D4-17D2-44FC-BD5A-5BF86F0ACB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15AF23D4-17D2-44FC-BD5A-5BF86F0ACB50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C26E091B-1397-406E-9758-4BD4CAB0C2A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C26E091B-1397-406E-9758-4BD4CAB0C2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C26E091B-1397-406E-9758-4BD4CAB0C2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C26E091B-1397-406E-9758-4BD4CAB0C2A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{040AB6B2-9A4E-4088-9129-4EAB8DD73EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{040AB6B2-9A4E-4088-9129-4EAB8DD73EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{040AB6B2-9A4E-4088-9129-4EAB8DD73EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{040AB6B2-9A4E-4088-9129-4EAB8DD73EBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
