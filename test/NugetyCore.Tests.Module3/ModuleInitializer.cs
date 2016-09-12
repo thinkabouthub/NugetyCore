@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using NugetyCore;
 using NugetyCore.Tests.Common;
 
 namespace Nugety.Tests.Module3
