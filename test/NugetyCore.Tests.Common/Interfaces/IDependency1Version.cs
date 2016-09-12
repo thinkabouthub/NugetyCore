@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nugety.Tests.Common
+namespace NugetyCore.Tests.Common
 {
     public interface IDependency1Version
     {

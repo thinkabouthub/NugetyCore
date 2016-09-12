@@ -2,7 +2,7 @@
 using NugetyCore;
 using Xunit;
 
-namespace Nugety.Tests
+namespace NugetyCore.Tests
 {
     public interface InvalidInterface
     {

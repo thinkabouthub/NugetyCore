@@ -3,7 +3,7 @@ using System.Linq;
 using NugetyCore;
 using Xunit;
 
-namespace Nugety.Tests
+namespace NugetyCore.Tests
 {
     public class GetModule
     {

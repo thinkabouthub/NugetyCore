@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Nugety.Tests.Common;
+using NugetyCore.Tests.Common;
 
 namespace NugetyCore.Tests.Module3
 {
@@ -12,7 +12,7 @@ namespace NugetyCore.Tests.Module3
     {
         public Type GetDependency1Type()
         {
-            var test = new Nugety.Tests.Dependency1.Class1();
+            var test = new Dependency1.Class1();
             return test.GetType();
         }
 
