@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Autofac;
 
-namespace Nugety
+namespace NugetyCore
 {
     public static class ContainerBuilderExtensions
     {

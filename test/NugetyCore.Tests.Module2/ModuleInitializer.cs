@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using NugetyCore;
 using NugetyCore.Tests.Common;
 
-namespace Nugety.Tests.Module2
+namespace NugetyCore.Tests.Module2
 {
     public class ModuleInitializer : Module, IModuleInitializer, IDependency1Version
     {

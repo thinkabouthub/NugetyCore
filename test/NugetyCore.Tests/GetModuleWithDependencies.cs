@@ -5,7 +5,7 @@ using NugetyCore;
 using NugetyCore.Tests.Common;
 using Xunit;
 
-namespace Nugety.Tests
+namespace NugetyCore.Tests
 {
     public class GetModuleWithDependencies
     {

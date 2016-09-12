@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.Loader;
 using Microsoft.Extensions.DependencyModel;
 
-namespace Nugety
+namespace NugetyCore
 {
     public class DirectoryModuleLoadContext : AssemblyLoadContext
     {

@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 
-namespace Nugety
+namespace NugetyCore
 {
     public class NugetyCatalog : INugetyCatalogProvider
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
-namespace Nugety
+namespace NugetyCore
 {
     public class TypesPart : ApplicationPart, IApplicationPartTypeProvider
     {

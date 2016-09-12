@@ -1,4 +1,4 @@
-﻿namespace Nugety
+﻿namespace NugetyCore
 {
     public interface IDirectoryModuleProvider : IModuleProvider
     {

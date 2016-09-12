@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 
-namespace Nugety
+namespace NugetyCore
 {
     public class DirectoryModuleProvider : IDirectoryModuleProvider
     {

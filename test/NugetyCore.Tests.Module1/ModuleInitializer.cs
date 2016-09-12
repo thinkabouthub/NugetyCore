@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NugetyCore;
 
-namespace Nugety.Tests.Module1
+namespace NugetyCore.Tests.Module1
 {
     public class ModuleInitializer : Module, IModuleInitializer
     {

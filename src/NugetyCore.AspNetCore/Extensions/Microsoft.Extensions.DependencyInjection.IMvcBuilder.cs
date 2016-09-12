@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Nugety
+namespace NugetyCore
 {
     public static class IMvcBuilderExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace Nugety.Tests.Dependency1
+﻿namespace NugetyCore.Tests.Dependency1
 {
     public class Class1
     {
