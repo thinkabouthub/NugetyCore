@@ -9,20 +9,20 @@
             _catalog = catalog;
         }
 
-        public string FileNameFilterPattern { get; set; }
+        public string ModuleFileNameFilterPattern { get; set; }
 
         public string ModuleNameFilterPattern { get; set; }
 
 
-        public virtual NugetyCatalog SetFileNameFilterPattern(string pattern)
+        public virtual NugetyCatalog SetModuleFileNameFilter(string pattern)
         {
-            FileNameFilterPattern = pattern;
+            this.ModuleFileNameFilterPattern = pattern;
             return _catalog;
         }
 
         public virtual NugetyCatalog SetModuleNameFilterPattern(string pattern)
         {
-            ModuleNameFilterPattern = pattern;
+            this.ModuleNameFilterPattern = pattern;
             return _catalog;
         }
     }

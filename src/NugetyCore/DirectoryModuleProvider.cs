@@ -34,8 +34,7 @@ namespace Nugety
             {
                 var context = new DirectoryModuleLoadContext(this, directory);
                 var module = context.LoadUsingFileName<T>();
-                if (module != null)
-                    modules.Add(module);
+                if (module != null) modules.Add(module);
             }
             return modules;
         }
@@ -47,25 +46,27 @@ namespace Nugety
                 throw new DirectoryNotFoundException(Options.Location);
 
             var directory = new DirectoryInfo(Options.Location);
-            var directories =
-                directory.GetDirectories(
+            var directories = directory.GetDirectories(
                     !string.IsNullOrEmpty(Catalog.Options.ModuleNameFilterPattern)
                         ? Catalog.Options.ModuleNameFilterPattern
                         : "*", SearchOption.TopDirectoryOnly);
             var notFound = name.Where(n => !directories.Any(d => d.Name == n));
-            if (notFound.Any())
-                throw new DirectoryNotFoundException(string.Format("Module Directory not found for '{0}'",
-                    string.Join(",", notFound.ToArray())));
+
+            if (notFound.Any()) throw new DirectoryNotFoundException(string.Format("Module Directory not found for '{0}'", string.Join(",", notFound.ToArray())));
+
             if (name.Length > 0)
+            {
                 foreach (var n in name)
                 {
                     var namedDirectory = directories.FirstOrDefault(d => d.Name == n);
                     if (namedDirectory != null)
                         list.Add(namedDirectory);
                 }
+            }
             else
-                foreach (var d in directories)
-                    list.Add(d);
+            {
+                foreach (var d in directories) list.Add(d);
+            }
             return list;
         }
     }

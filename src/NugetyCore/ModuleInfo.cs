@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Nugety
 {
     public class ModuleInfo<T> : ModuleInfo
     {
-        public ModuleInfo(INugetyCatalogProvider catalog, string name, AssemblyInfo assemblyInfo,
-            Type moduleInitialiser = null) : base(catalog, name, assemblyInfo, moduleInitialiser)
+        public ModuleInfo(IModuleProvider provider, string name, AssemblyInfo assemblyInfo, Type moduleInitialiser = null) : base(provider, name, assemblyInfo, moduleInitialiser)
         {
         }
 
-        public ModuleInfo(INugetyCatalogProvider catalog, AssemblyInfo assembly, Type moduleInitialiser = null)
-            : base(catalog, assembly, moduleInitialiser)
+        public ModuleInfo(IModuleProvider provider, AssemblyInfo assembly, Type moduleInitialiser = null)
+            : base(provider, assembly, moduleInitialiser)
         {
         }
     }
@@ -23,28 +23,32 @@ namespace Nugety
     {
         public static readonly object _lock = new object();
 
-        private readonly Collection<AssemblyInfo> related = new Collection<AssemblyInfo>();
+        private readonly Collection<AssemblyInfo> _assemblies = new Collection<AssemblyInfo>();
 
-        public ModuleInfo(INugetyCatalogProvider catalog, string name, AssemblyInfo assemblyInfo,
-            Type moduleInitialiser = null)
+        public ModuleInfo(IModuleProvider provider, string name, AssemblyInfo assemblyInfo, Type moduleInitialiser = null) : this(provider, assemblyInfo, moduleInitialiser)
         {
-            Catalog = catalog;
-            Name = name;
-            AssemblyInfo = assemblyInfo;
-            ModuleInitialiser = moduleInitialiser;
+            this.Name = name;
         }
 
-        public ModuleInfo(INugetyCatalogProvider catalog, AssemblyInfo assembly, Type moduleInitialiser = null)
+        public ModuleInfo(IModuleProvider provider, AssemblyInfo assembly, Type moduleInitialiser = null)
         {
-            Catalog = catalog;
-            Name = assembly.Assembly.GetName().Name;
-            AssemblyInfo = assembly;
-            ModuleInitialiser = moduleInitialiser;
+            this.ModuleProvider = provider;
+            this.Name = assembly.Assembly.GetName().Name;
+            this.AssemblyInfo = assembly;
+            this.ModuleInitialiser = moduleInitialiser;
+            this.AllowAssemblyResolve = true;
         }
 
-        public INugetyCatalogProvider Catalog { get; private set; }
+        public INugetyCatalogProvider Catalog
+        {
+            get { return this.ModuleProvider?.Catalog; }
+        }
+
+        public IModuleProvider ModuleProvider { get; private set; }
 
         public Type ModuleInitialiser { get; private set; }
+
+        public bool AllowAssemblyResolve { get; set; }
 
         public string Name { get; }
 
@@ -55,24 +59,35 @@ namespace Nugety
 
         public AssemblyInfo AssemblyInfo { get; }
 
-        public IEnumerable<AssemblyInfo> Related
+        public IEnumerable<AssemblyInfo> Assemblies
         {
-            get { return related; }
+            get { return this._assemblies; }
         }
 
         public void AddModuleInitialiser(Type type)
         {
-            if (!AssemblyInfo.Assembly.ExportedTypes.Contains(type))
-                throw new InvalidDataException(string.Format("Type '{0}' does not exist in Assembly '{1}'", type,
-                    AssemblyInfo.Assembly));
+            if (!AssemblyInfo.Assembly.ExportedTypes.Contains(type)) throw new InvalidDataException(string.Format("Type '{0}' does not exist in Assembly '{1}'", type, AssemblyInfo.Assembly));
             ModuleInitialiser = type;
+            var assembly = type.GetTypeInfo().Assembly;
+            this.AddAssembly(new AssemblyInfo(assembly));
         }
 
-        public void AddRelated(AssemblyInfo info)
+        public void AddAssembly(AssemblyInfo info)
         {
             lock (_lock)
             {
-                related.Add(info);
+                this._assemblies.Add(info);
+            }
+        }
+
+        public void RemoveAssembly(AssemblyInfo info)
+        {
+            lock (_lock)
+            {
+                if (!this.Assemblies.Any(a => a.Assembly.GetName().Equals(info.Assembly.GetName())))
+                {
+                    this._assemblies.Remove(info);
+                }
             }
         }
 

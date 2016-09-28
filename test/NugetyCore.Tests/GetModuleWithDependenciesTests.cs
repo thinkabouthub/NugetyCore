@@ -7,7 +7,7 @@ using Xunit;
 
 namespace NugetyCore.Tests
 {
-    public class GetModuleWithDependencies
+    public class GetModuleWithDependenciesTests
     {
         [Fact]
         public void Given_Dependency_When_DoesNotExist_Then_ThrowsException()

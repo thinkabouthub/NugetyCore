@@ -10,15 +10,15 @@ namespace Nugety
     {
         public DirectoryModuleLoadContext(IDirectoryModuleProvider loader, DirectoryInfo directory)
         {
-            Loader = loader;
-            Directory = directory;
+            this.Loader = loader;
+            this.Directory = directory;
         }
 
         public IDirectoryModuleProvider Loader { get; }
 
         public INugetyCatalogProvider Catalog
         {
-            get { return Loader.Catalog; }
+            get { return this.Loader.Catalog; }
         }
 
         public DirectoryInfo Directory { get; }
@@ -28,23 +28,15 @@ namespace Nugety
         protected override Assembly Load(AssemblyName assemblyName)
         {
             Assembly assembly = null;
-            var library =
-                DependencyContext.Default.RuntimeLibraries.FirstOrDefault(
-                    l => l.GetDefaultAssemblyNames(DependencyContext.Default).Any(a => a.Equals(assemblyName)));
-            if (library != null)
-                assembly = Assembly.Load(assemblyName);
+            var library = DependencyContext.Default.RuntimeLibraries.FirstOrDefault(l => l.GetDefaultAssemblyNames(DependencyContext.Default).Any(a => a.Equals(assemblyName)));
+            if (library != null) assembly = Assembly.Load(assemblyName);
             if (assembly == null)
             {
-                var file =
-                    Directory.GetFileSystemInfos(string.Concat(assemblyName.Name, ".dll"), SearchOption.AllDirectories)
-                        .FirstOrDefault();
-                if (file != null)
-                    assembly = LoadFromAssemblyPath(file.FullName);
+                var file = Directory.GetFileSystemInfos(string.Concat(assemblyName.Name, ".dll"), SearchOption.AllDirectories).FirstOrDefault();
+                if (file != null) assembly = LoadFromAssemblyPath(file.FullName);
             }
-            if (assembly == null)
-                assembly = Assembly.Load(assemblyName);
-            if (assembly != null)
-                ModuleInfo.AddRelated(new AssemblyInfo(assembly));
+            if (assembly == null) assembly = Assembly.Load(assemblyName);
+            if (assembly != null) this.ModuleInfo.AddAssembly(new AssemblyInfo(assembly));
             return assembly;
         }
 
@@ -57,14 +49,13 @@ namespace Nugety
                     !string.IsNullOrEmpty(Catalog.Options.FileNameFilterPattern)
                         ? Catalog.Options.FileNameFilterPattern
                         : "*.dll", SearchOption.AllDirectories))
-                if (
-                    !DependencyContext.Default.RuntimeLibraries.Any(
+                if (!DependencyContext.Default.RuntimeLibraries.Any(
                         l =>
                             l.GetDefaultAssemblyNames(DependencyContext.Default)
                                 .Any(a => a.Name == Path.GetFileNameWithoutExtension(file.Name))))
                 {
                     var assembly = LoadFromAssemblyPath(file.FullName);
-                    ModuleInfo = new ModuleInfo<T>(Catalog, Directory.Name, new AssemblyInfo(assembly));
+                    this.ModuleInfo = new ModuleInfo<T>(this.Loader, this.Directory.Name, new AssemblyInfo(assembly));
                     var type = Catalog.GetModuleInitializer<T>(assembly);
                     if (type != null)
                     {
