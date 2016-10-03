@@ -56,7 +56,7 @@ var modules = new NugetyCatalog()
 	.GetModules<IModuleInitializer>().Load();
 ```
 
-[Set root Modules Directory](https://github.com/thinkabouthub/NugetyCore/wiki/Load-From-Directory/). The default root directory is "Nugety".
+[Set root Modules Directory](https://github.com/thinkabouthub/NugetyCore/wiki/Module-Discovery). The default root directory is "Nugety".
 
 ```C#
 var modules = new NugetyCatalog()
