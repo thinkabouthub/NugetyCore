@@ -27,7 +27,7 @@ namespace Nugety
             params string[] moduleName)
         {
             var modules = new NugetyCatalog()
-                .Options.SetFileNameFilterPattern(fileNameFilterPattern)
+                .Options.SetModuleFileNameFilter(fileNameFilterPattern)
                 .FromDirectory()
                 .GetModules<IModuleInitializer>(moduleName).Load();
             builder.InitialiseModules(modules);
