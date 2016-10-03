@@ -4,17 +4,19 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Loader;
 
 namespace Nugety
 {
     public class ModuleInfo<T> : ModuleInfo
     {
-        public ModuleInfo(IModuleProvider provider, string name, AssemblyInfo assemblyInfo, Type moduleInitialiser = null) : base(provider, name, assemblyInfo, moduleInitialiser)
+        public ModuleInfo(AssemblyLoadContext context, IModuleProvider provider, string name, AssemblyInfo assemblyInfo, Type moduleInitialiser = null) 
+            : base(context, provider, name, assemblyInfo, moduleInitialiser)
         {
         }
 
-        public ModuleInfo(IModuleProvider provider, AssemblyInfo assembly, Type moduleInitialiser = null)
-            : base(provider, assembly, moduleInitialiser)
+        public ModuleInfo(AssemblyLoadContext context, IModuleProvider provider, AssemblyInfo assembly, Type moduleInitialiser = null)
+            : base(context, provider, assembly, moduleInitialiser)
         {
         }
     }
@@ -25,19 +27,22 @@ namespace Nugety
 
         private readonly Collection<AssemblyInfo> _assemblies = new Collection<AssemblyInfo>();
 
-        public ModuleInfo(IModuleProvider provider, string name, AssemblyInfo assemblyInfo, Type moduleInitialiser = null) : this(provider, assemblyInfo, moduleInitialiser)
+        public ModuleInfo(AssemblyLoadContext context, IModuleProvider provider, string name, AssemblyInfo assemblyInfo, Type moduleInitialiser = null) : this(context, provider, assemblyInfo, moduleInitialiser)
         {
             this.Name = name;
         }
 
-        public ModuleInfo(IModuleProvider provider, AssemblyInfo assembly, Type moduleInitialiser = null)
+        public ModuleInfo(AssemblyLoadContext context, IModuleProvider provider, AssemblyInfo assembly, Type moduleInitialiser = null)
         {
+            this.Context = context;
             this.ModuleProvider = provider;
             this.Name = assembly.Assembly.GetName().Name;
             this.AssemblyInfo = assembly;
             this.ModuleInitialiser = moduleInitialiser;
             this.AllowAssemblyResolve = true;
         }
+
+        public AssemblyLoadContext Context { get; private set; }
 
         public INugetyCatalogProvider Catalog
         {
@@ -67,7 +72,7 @@ namespace Nugety
         public void AddModuleInitialiser(Type type)
         {
             if (!AssemblyInfo.Assembly.ExportedTypes.Contains(type)) throw new InvalidDataException(string.Format("Type '{0}' does not exist in Assembly '{1}'", type, AssemblyInfo.Assembly));
-            ModuleInitialiser = type;
+            this.ModuleInitialiser = type;
             var assembly = type.GetTypeInfo().Assembly;
             this.AddAssembly(new AssemblyInfo(assembly));
         }
@@ -76,7 +81,10 @@ namespace Nugety
         {
             lock (_lock)
             {
-                this._assemblies.Add(info);
+                if (!this.Assemblies.Any(a => a.Assembly.GetName().Equals(info.Assembly.GetName())))
+                {
+                    this._assemblies.Add(info);
+                }
             }
         }
 

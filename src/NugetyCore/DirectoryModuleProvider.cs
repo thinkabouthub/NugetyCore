@@ -2,6 +2,8 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using Microsoft.Extensions.DependencyModel;
 
 namespace Nugety
 {
@@ -29,11 +31,11 @@ namespace Nugety
         protected virtual IEnumerable<ModuleInfo<T>> LoadFromDirectory<T>(params string[] name)
         {
             var modules = new List<ModuleInfo<T>>();
-            var directories = GetModuleDirectories(name);
+            var directories = this.GetModuleDirectories(name);
             foreach (var directory in directories)
             {
                 var context = new DirectoryModuleLoadContext(this, directory);
-                var module = context.LoadUsingFileName<T>();
+                var module = context.LoadModule<T>();
                 if (module != null) modules.Add(module);
             }
             return modules;
@@ -59,8 +61,7 @@ namespace Nugety
                 foreach (var n in name)
                 {
                     var namedDirectory = directories.FirstOrDefault(d => d.Name == n);
-                    if (namedDirectory != null)
-                        list.Add(namedDirectory);
+                    if (namedDirectory != null) list.Add(namedDirectory);
                 }
             }
             else

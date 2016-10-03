@@ -59,12 +59,12 @@ namespace Nugety
 
         protected void OnAssemblyResolved(AssemblyResolvedEventArgs args)
         {
-            AssemblyResolved?.Invoke(this, args);
+            this.AssemblyResolved?.Invoke(this, args);
         }
 
         protected void OnAssemblyResolve(AssemblyResolveCancelEventArgs args)
         {
-            AssemblyResolve?.Invoke(this, args);
+            this.AssemblyResolve?.Invoke(this, args);
         }
 
         private readonly Collection<AssemblyName> assemblyResolveFailed = new Collection<AssemblyName>();
@@ -76,7 +76,7 @@ namespace Nugety
 
         protected virtual Assembly OnAssemblyResolve(AssemblyLoadContext assemblyLoadContext, AssemblyName assemblyName)
         {
-            return assemblyLoadContext.LoadFromAssemblyPath() ?? this.ResolveAssembly(assemblyName);
+            return assemblyLoadContext.LoadFromAssemblyName(assemblyName) ?? this.ResolveAssembly(assemblyName);
         }
 
         public virtual Assembly ResolveAssembly(AssemblyName name)
@@ -130,7 +130,7 @@ namespace Nugety
                 {
                     try
                     {
-                        var d = module.ModuleProvider.LoadAssembly(file.FullName);
+                        var d = module.Context.LoadFromAssemblyName(assemblyName);
                         if (d != null) dependency = new AssemblyInfo(d);
                     }
                     catch
