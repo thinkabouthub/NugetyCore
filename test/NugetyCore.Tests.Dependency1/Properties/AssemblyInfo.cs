@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ThinkAbout")]
 [assembly: AssemblyProduct("NugetyCore.Tests.Dependency1")]
 [assembly: AssemblyTrademark("")]
 

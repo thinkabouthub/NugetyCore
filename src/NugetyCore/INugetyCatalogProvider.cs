@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Microsoft.Extensions.Logging;
 
 namespace Nugety
 {
@@ -35,5 +36,7 @@ namespace Nugety
         void AddModule(ModuleInfo module);
 
         void RemoveModule(ModuleInfo module);
+
+        INugetyCatalogProvider UseLoggerFactory(ILoggerFactory loggerFactory);
     }
 }

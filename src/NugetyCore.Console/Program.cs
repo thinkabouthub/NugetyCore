@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Nugety;
 
 namespace NugetyCore.Console
@@ -11,7 +9,7 @@ namespace NugetyCore.Console
         public static void Main(string[] args)
         {
             var modules = new NugetyCatalog()
-                .Options.SetModuleFileNameFilter("*Module*")
+                .Options.SetModuleFileNameFilter("*Module*.dll")
                 .FromDirectory()
                 .GetModules<IModuleInitializer>();
 

@@ -3,10 +3,10 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "NugetyCore.AspNetCore": "1.0.1",
-    "NugetyCore.Autofac": "1.0.1",
+    "NugetyCore.AspNetCore": "1.0.1-*",
+    "NugetyCore.Autofac": "1.0.1-*",
     "NugetyCore.Tests.Common": "1.0.0-*",
-    "NugetyCore.Tests.Dependency1": "1.0.0-0",
+    "NugetyCore.Tests.Dependency1": "1.0.0-0"
   },
 
   "frameworks": {

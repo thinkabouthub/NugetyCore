@@ -14,10 +14,7 @@ namespace Nugety
 
         public INugetModuleLoader Loader { get; }
 
-        public INugetyCatalogProvider Catalog
-        {
-            get { return Loader.Catalog; }
-        }
+        public INugetyCatalogProvider Catalog => Loader.Catalog; 
 
         public DirectoryInfo Directory { get; private set; }
 
@@ -28,7 +25,7 @@ namespace Nugety
             return null;
         }
 
-        public virtual ModuleInfo<T> LoadUsingFileName<T>()
+        public virtual ModuleInfo LoadUsingFileName<T>()
         {
             return null;
         }

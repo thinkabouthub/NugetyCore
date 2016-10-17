@@ -2,8 +2,6 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using Microsoft.Extensions.DependencyModel;
 
 namespace Nugety
 {
@@ -18,10 +16,7 @@ namespace Nugety
 
         public INugetyCatalogProvider Catalog { get; }
 
-        public DirectoryLoaderOptions Options
-        {
-            get { return options ?? (options = new DirectoryLoaderOptions(this)); }
-        }
+        public DirectoryLoaderOptions Options => options ?? (options = new DirectoryLoaderOptions(this)); 
 
         public virtual IEnumerable<ModuleInfo<T>> GetModules<T>(params string[] name)
         {
@@ -34,9 +29,9 @@ namespace Nugety
             var directories = this.GetModuleDirectories(name);
             foreach (var directory in directories)
             {
-                var context = new DirectoryModuleLoadContext(this, directory);
-                var module = context.LoadModule<T>();
-                if (module != null) modules.Add(module);
+                var module = new DirectoryModuleInfo<T>(this, directory);
+                module.LoadModule<T>();
+                if (module.AssemblyInfo != null && module.ModuleInitialiser != null) modules.Add(module);
             }
             return modules;
         }
@@ -44,8 +39,7 @@ namespace Nugety
         public virtual IEnumerable<DirectoryInfo> GetModuleDirectories(params string[] name)
         {
             var list = new Collection<DirectoryInfo>();
-            if (!Directory.Exists(Options.Location))
-                throw new DirectoryNotFoundException(Options.Location);
+            if (!Directory.Exists(Options.Location)) throw new DirectoryNotFoundException($"Directory Catalog '{Options.Location}' does not exist");
 
             var directory = new DirectoryInfo(Options.Location);
             var directories = directory.GetDirectories(
@@ -54,7 +48,7 @@ namespace Nugety
                         : "*", SearchOption.TopDirectoryOnly);
             var notFound = name.Where(n => !directories.Any(d => d.Name == n));
 
-            if (notFound.Any()) throw new DirectoryNotFoundException(string.Format("Module Directory not found for '{0}'", string.Join(",", notFound.ToArray())));
+            if (notFound.Any()) throw new DirectoryNotFoundException($"Module Directory not found for '{string.Join(",", notFound.ToArray())}'");
 
             if (name.Length > 0)
             {

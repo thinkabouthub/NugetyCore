@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 
 namespace Nugety
 {
@@ -13,12 +14,19 @@ namespace Nugety
 
         public INugetyCatalogProvider Catalog { get; }
 
-        public NugetLoaderOptions Options
-        {
-            get { return options ?? (options = new NugetLoaderOptions(this)); }
-        }
+        public NugetLoaderOptions Options => options ?? (options = new NugetLoaderOptions(this)); 
 
         public virtual IEnumerable<ModuleInfo<T>> GetModules<T>(params string[] name)
+        {
+            return null;
+        }
+
+        public virtual AssemblyInfo ResolveAssembly(ModuleInfo module, AssemblyName name)
+        {
+            return null;
+        }
+
+        public virtual AssemblyInfo LoadAssembly(ModuleInfo module, string location, AssemblyName name = null)
         {
             return null;
         }

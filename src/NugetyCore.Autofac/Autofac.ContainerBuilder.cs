@@ -7,8 +7,7 @@ namespace Nugety
     {
         public static void RegisterModules(this ContainerBuilder builder, IEnumerable<Module> modules)
         {
-            foreach (var m in modules)
-                builder.RegisterModule(m);
+            foreach (var m in modules) builder.RegisterModule(m);
         }
     }
 }

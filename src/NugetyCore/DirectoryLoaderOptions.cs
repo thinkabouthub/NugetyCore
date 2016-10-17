@@ -4,7 +4,7 @@
     {
         public DirectoryLoaderOptions(IDirectoryModuleProvider loader)
         {
-            Loader = loader;
+            this.Loader = loader;
         }
 
         public IDirectoryModuleProvider Loader { get; }
@@ -13,7 +13,7 @@
 
         public IDirectoryModuleProvider SetLocation(string location)
         {
-            Location = location;
+            this.Location = location;
             return Loader;
         }
     }

@@ -12,5 +12,12 @@
     "netstandard1.6": {
       "imports": "dnxcore50"
     }
+  },
+
+  "scripts": {
+    "postcompile": [
+      "cmd /c echo %project:Directory%",
+      "xcopy /f /r /y /i /s \"%compile:OutputDir%\\*\" \"%project:Directory%\\..\\NugetyCore.Console\\Nugety\\Module\""
+    ]
   }
 }
