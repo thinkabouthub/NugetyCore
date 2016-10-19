@@ -75,7 +75,7 @@ var modules = new NugetyCatalog()
 
 ## Project
 
-**There is a growing number of [application integration libraries] that make using Nugety with your application a snap.**
+**There is a growing number of application integration libraries that make using Nugety with your application a snap.**
 
 - [NugetyCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore) - Core Nugety API [this repo](https://github.com/thinkabouthub/NugetyCore).
 - [NugetyCore.AspNetCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.AspNetCore) - ASP.NET integration for Nugety [this repo](https://github.com/thinkabouthub/NugetyCore).
