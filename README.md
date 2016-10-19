@@ -20,7 +20,7 @@ Our [Getting Started](https://github.com/thinkabouthub/NugetyCore/wiki/getting-s
 
 ## Get Packages
 
-You can get Nugety by [grabbing the latest NuGet packages](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety-core).
+You can get Nugety by [grabbing the latest NuGet packages](https://www.nuget.org/packages?q=nugetycore). If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/nugety-core).
 
 [Release notes](https://github.com/thinkabouthub/NugetyCore/wiki/release-notes) are available on the wiki.
 
@@ -77,7 +77,7 @@ var modules = new NugetyCatalog()
 
 **There is a growing number of application integration libraries that make using Nugety with your application a snap.**
 
-- [NugetyCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore) - Core Nugety API [this repo](https://github.com/thinkabouthub/NugetyCore).
-- [NugetyCore.AspNetCore](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.AspNetCore) - ASP.NET integration for Nugety [this repo](https://github.com/thinkabouthub/NugetyCore).
-- [Nugety.Autofac](https://github.com/thinkabouthub/nugety) - Support for Nugety as Autofac modules [this repo](https://github.com/thinkabouthub/NugetyCore).
-- [NugetyCore.Nuget](https://www.myget.org/feed/nugety-core/package/nuget/NugetyCore.Nuget) - Support for Nuget as Nugety source [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [NugetyCore](https://www.nuget.org/packages?q=nugetycore) - Core Nugety API [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [NugetyCore.AspNetCore](https://www.nuget.org/packages?q=nugetycore.aspnetcore) - ASP.NET integration for Nugety [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [Nugety.Autofac](https://www.nuget.org/packages?q=nugety.autofac) - Support for Nugety as Autofac modules [this repo](https://github.com/thinkabouthub/NugetyCore).
+- [NugetyCore.Nuget](https://www.nuget.org/packages?q=nugety.nuget) - Support for Nuget as Nugety source [this repo](https://github.com/thinkabouthub/NugetyCore).
