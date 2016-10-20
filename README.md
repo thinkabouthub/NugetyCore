@@ -26,7 +26,7 @@ You can get Nugety by [grabbing the latest NuGet packages](https://www.nuget.org
 
 ## Get Help
 
-**Need help with Nugety?** We're ready to answer your questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/nugety). Our [blog page](https://thinkabout.ghost.io/) is also a useful source of information and updates.
+**Need help with Nugety?** We're ready to answer your questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/nugety). Alternatively ask a question [here](https://github.com/thinkabouthub/NugetyCore/issues).
 
 ##Super-duper quick start
 
